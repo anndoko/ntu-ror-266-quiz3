@@ -130,7 +130,6 @@
 
   # 建立 "Bob" 及 "Rails Is Fun"，各自存於 user1 及 group1 的變數。 
   user1 = User.create(user_name: "Bob")
-  
   group1 = Group.create(group_name: "Rails Is Fun")
   
   # 綁定
