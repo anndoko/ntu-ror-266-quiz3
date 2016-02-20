@@ -126,18 +126,19 @@
   #### ANS:
   ```ruby
   # 開啟 rails console
-  rails c
+  $ rails c
 
   # 建立 "Bob" 及 "Rails Is Fun"，各自存於 user1 及 group1 的變數。 
-  $ user1 = User.create(user_name: "Bob")
-  $ group1 = Group.create(group_name: "Rails Is Fun")
+  user1 = User.create(user_name: "Bob")
+  
+  group1 = Group.create(group_name: "Rails Is Fun")
   
   # 綁定
-  $ user1.groups << group1
+  user1.groups << group1
 
   # 檢查多對多關聯
-  $ user1.groups
-  $ group1.users
+  user1.groups
+  group1.users
   ```
 
 12. 延續第11題，請寫一段程式碼確保使用者在建立新社團時社團名不可以是空白，而且不能超過50個字
