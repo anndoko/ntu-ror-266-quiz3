@@ -38,7 +38,8 @@
     **name (string)**,
     **description (text)**,
     **members (integer)**
-    * 請寫出一個能產生出以上需求的 migration 檔
+  * 請寫出一個能產生出以上需求的 migration 檔
+  
   #### ANS: 
   ```
   ```
