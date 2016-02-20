@@ -101,10 +101,10 @@
   #### ANS:
   
   Migration 檔，請至:
-  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_groups/db/migrate
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_project_issue/db/migrate
 
   Modle 檔，請至: 
-  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_groups/app/models
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_project_issue/app/models
   
 
 10. 若今天我有以下 model 檔：
@@ -116,15 +116,34 @@
   ```
   請寫出和這個 model 檔相關聯的 model 檔，以及這些 model 檔所需要的資料庫欄位
   #### ANS:
-  ```
-  ```
+  Migration 檔，請至:
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_user_group/db/migrate
 
-11. 延續第10題，如果需要讓一個叫 "Bob" 的使用者產生一個名字叫做 "Rails is Fun" 的社團，應該如何在 rails console 裡實作出來？
+  Modle 檔，請至: 
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_user_group/app/models
+
+11. 延續第10題，如果需要讓一個叫 "Bob" 的使用者產生一個名字叫做 "Rails Is Fun" 的社團，應該如何在 rails console 裡實作出來？
   #### ANS:
-  ```
+  ```ruby
+  # 開啟 rails console
+  rails c
+
+  # 建立 "Bob" 及 "Rails Is Fun"，各自存於 user1 及 group1 的變數。 
+  $ user1 = User.create(user_name: "Bob")
+  $ group1 = Group.create(group_name: "Rails Is Fun")
+  
+  # 綁定
+  $ user1.groups << group1
+
+  # 檢查多對多關聯
+  $ user1.groups
+  $ group1.users
   ```
 
 12. 延續第11題，請寫一段程式碼確保使用者在建立新社團時社團名不可以是空白，而且不能超過50個字
   #### ANS:
-  ```
+  ```ruby
+  # Validation
+  validates :group_name, presence: true
+  validates :group_name, length: { maximum: 50 }
   ```
