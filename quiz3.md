@@ -5,7 +5,7 @@
   # 假設在一個名為 ror_project 的專案底下
 
   * database.yml
-  資料庫設定。
+  設定資料庫。
   位置: ror_project/config/database.yml
 
   * routes.rb
@@ -28,10 +28,10 @@
 3. 請解釋 CRUD 是哪四個字的縮寫？ 
   #### ANS:
   ```
-  C: Create
-  R: Read
-  U: Update
-  D: Delete    
+  C: Create (建立)
+  R: Read (讀取)
+  U: Update (更新)
+  D: Delete (刪除)
   ```
 
 4. 請問在 routes.rb 裡面加入以下程式碼會產生出哪一些 url？ (提示：在 browser 輸入```http://localhost:3000/rails/info/routes```)
@@ -49,8 +49,15 @@
 5. 請解釋 model 檔案和 migration 檔案的差別
   #### ANS:
   ```
-  Model 檔:
-  Migration 檔:
+  Model 檔: 
+  * 類別繼承 ActiveRecord::Base。
+  * 在 model 檔中設定與資料表之間的關聯(一對一 / 一對多 / 多對多)，或基本 CRUD 的操作、資料驗證等。
+  * 可直接編輯，存檔生效。若是在 rails console 的狀態下修改 model 檔，執行 $ reload! 載入。
+  
+  Migration 檔: 資料庫遷移。
+  * 類別繼承 ActiveRecord::Migration 的子類別。
+  * 用來進行資料庫的管理，建立資料表及欄位。
+  * 無法直接編輯 migration 檔。如果要變更 migration，必須執行 $ rake db:rollback 後編輯，再次執行 $ rake db:rollback 後，編輯的內容才會生效。
   ```
 
 6. 若今天發現一個 migration 檔寫錯，請問我應該用什麼指令回復到上一個版本的 migration? 
@@ -58,8 +65,7 @@
   ```
   $ rake db:rollback
 
-  如果要回到上 n 個 migration，則用: 
-  $ rake db:rollback STEP=n
+  如果要回到上 n 個 migration，則用: $ rake db:rollback STEP=n
   ```
 
 7. 假設今天
@@ -88,11 +94,17 @@
 8. 請解釋什麼是 ActiveRecord? 
   #### ANS: 
   ```
+  ActiveRecord: Rails 的 Models 基礎。
   ```
 
-9. 若今天需要為 ```Project``` 和 ```Issue``` 這兩個 Model 建立一對多的關係，請寫出實作上所需要的 migratiion 和 model 檔案 
+9. 若今天需要為 ```Project``` 和 ```Issue``` 這兩個 Model 建立一對多的關係，請寫出實作上所需要的 migration 和 model 檔案 
   #### ANS:
   ```
+  Migration 檔，請至:
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_groups/db/migrate
+
+  Modle 檔，請至: 
+  https://github.com/anndoko/ntu_ror_266_quiz3/tree/master/quiz3_groups/app/models
   ```
 
 10. 若今天我有以下 model 檔：
@@ -102,7 +114,7 @@
     has_many :groups, through: :groups_users 
   end
   ```
-  請寫出和這個 model 檔相關連的 model 檔，以及這些 model 檔所需要的資料庫欄位
+  請寫出和這個 model 檔相關聯的 model 檔，以及這些 model 檔所需要的資料庫欄位
   #### ANS:
   ```
   ```
