@@ -2,14 +2,19 @@
 
   #### ANS:
   ```
-  database.yml
-  ror_project/config/database.yml
+  # 假設在一個名為 ror_project 的專案底下
 
-  routes.rb
-  ror_project/config/database.yml
+  * database.yml
+  資料庫設定。
+  位置: ror_project/config/database.yml
 
-  Gemfile
-  ror_project/Gemfile
+  * routes.rb
+  設定子網址。
+  位置: ror_project/config/database.yml
+
+  * Gemfile
+  設定 (新增 / 刪除 / 設定版本) 會使用到的 Gems 套件。
+  位置: ror_project/Gemfile
   ```
 
 2. MVC 架構裡的 M, V, 和 C 分別代表什麼？ 
@@ -35,6 +40,10 @@
   ```
   #### ANS:
   ```
+  users_path
+  new_user_path
+  edit_user_path
+  user_path
   ```
 
 5. 請解釋 model 檔案和 migration 檔案的差別
@@ -49,7 +58,7 @@
   ```
   $ rake db:rollback
 
-  如有回到上 n 個 migration，則用: 
+  如果要回到上 n 個 migration，則用: 
   $ rake db:rollback STEP=n
   ```
 
