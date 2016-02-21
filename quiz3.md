@@ -10,7 +10,7 @@
 
   * routes.rb
   設定子網址。
-  位置: ror_project/config/database.yml
+  位置: ror_project/config/routes.rb
 
   * Gemfile
   設定 (新增 / 刪除 / 設定版本) 會使用到的 Gems 套件。
